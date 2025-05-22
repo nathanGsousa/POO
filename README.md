@@ -36,9 +36,13 @@ Sistema de Gerenciamento Escolar
  Descrição: Cadastro de alunos, professores, turmas, notas e faltas.
  O que envolve:
 > Herança: Pessoa → Aluno e Professor
+
 > Polimorfismo: métodos exibirInformacoes() com comportamentos distintos
+
 > Interface: com método calcularMedia()
+
 > Coleções: lista de alunos por turma, mapa de notas por disciplina
+
 > API: uso de java.time para datas ou API externa para localização
 
 **Exemplo do nosso projeto:**
