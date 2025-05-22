@@ -1,0 +1,36 @@
+{
+  "melee": {
+    "espada": {
+      "dano": 10,
+      "alcance": 2
+    },
+    "machado": {
+      "dano": 12,
+      "alcance": 1
+    }
+  },
+  "tank": {
+    "escudo": {
+      "dano": 6,
+      "alcance": 1
+    },
+    "martelo": {
+      "dano": 9,
+      "alcance": 1
+    }
+  },
+  "longDistance": {
+    "arco longo": {
+      "dano": 9,
+      "alcance": 3
+    },
+    "besta": {
+      "dano": 7,
+      "alcance": 4
+    },
+    "grimorio": {
+        "dano": 5,
+        "alcance": 4
+    }
+  }
+}
