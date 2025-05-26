@@ -9,6 +9,7 @@ public class Player {
 
     private String nome;
     private Classes personagem; // Pode ser Melee, Tank ou LongDistance
+    private final int VIDA;
 
     public Player(String nome, String tipoClasse) {
         this.nome = nome;
@@ -26,6 +27,7 @@ public class Player {
             default:
                 throw new IllegalArgumentException("Classe inválida: " + tipoClasse);
         }
+        this.VIDA = personagem.getVida();
     }
 
     public String getNome() {
@@ -44,25 +46,34 @@ public class Player {
         return personagem.getVida();
     }
 
-    public void dano(){
-        personagem.dano();
-
+    public int getAlcance(){
+        return personagem.getAlcance();
     }
 
-    public void vida(){
-        int VIDA = getVida();
+    public int getDano(){
+        return personagem.getDano();
+    }
 
-        System.out.println(getVida() + "/" + VIDA);
+    public void dano(){
+        personagem.dano();
+    }
+
+
+
+    public void vida(){
+        
+
+        System.out.println("HP: " + getVida() + "/" + VIDA);
     }
 
     public boolean estaVivo() {
         return personagem.estaVivo();
     }
 
-    //public void atacar(NPC inimigo) {
-        //int distancia = Game.getDistancia(); 
-        //personagem.atacar(inimigo.personagem, distancia);
-    //}
+    // public void atacar(NPC inimigo) {
+    //     int distancia = Game.getDistancia(); 
+    //     personagem.atacar(inimigo.personagem, distancia);
+    // }
 
     public String getNomeArma() {
         return personagem.getNomeArma();
@@ -72,11 +83,13 @@ public class Player {
         
         Player player = new Player("nath", "melee"); 
         int cont = 10;
+        System.out.println(player.personagem.getClasseCombate());
         while (true) {
 
             player.vida();
 
             player.dano();
+            
 
             cont--;
 

@@ -52,37 +52,55 @@ Escolha sua classe:
 
 
 
-        public static void jogar(Player player){
+    public static void jogar(Player player){
 
-            NPC npc = new NPC();
-            Game game = new Game(player, npc);
+        NPC npc = new NPC();
+        Game game = new Game(player, npc);
 
-            while(true){
+        while(true){
 
-                System.out.println(game.mostrarCampo());
-                System.out.println(player.getVida());
+            System.out.println(game.mostrarCampo());
+                
+            System.out.println(player.getNome() + player.getClasseCombate());
+            player.vida();
+            System.out.println("Arma: " + player.getNomeArma() + '\n' + "Dano: " + player.getDano() + '\n' + "Alcance: " + player.getAlcance());
 
-
-
-
-
-
-
-
-
-
-                if (player.estaVivo() || npc.estaVivo()){
-                    break;
+            System.out.println("""
+Ações:
+[1] Mover para Frente
+[2] Mover para Trás
+[3] Ataque
+                """);
+            int acao = 0;
+                while (acao < 1 || acao > 3) {
+                System.out.print("> Ações (1-3): ");
+                if (scanner.hasNextInt()) {
+                    acao = scanner.nextInt();
+                } else {
+                scanner.next(); // limpa entrada inválida
                 }
+                }
+
+            switch (acao) {
+                case 1 -> game.moverPlayerFrente();
+                case 2 -> game.moverPlayerTras();
+                //case 3 : player.atacar(npc);
+                default -> System.out.println("teste");
+            };
+
+            
+
+
+            if (!player.estaVivo() && !npc.estaVivo()){
+                     break;
             }
+        }
+    }
 
+    public static void main(String[] args) {
+        Player player = new Player("nome", "tank");
 
-
-
-
-
-
-        
+        TelaGame.jogar(player);
     }
 }
 
