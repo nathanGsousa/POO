@@ -7,17 +7,21 @@ public class Game {
     private final int tamanho;
     private int posPlayer;
     private int posNPC;
+    private Player player;
+    private NPC npc;
 
     public Game(int tamanho, int posPlayerInicial, int posNPCInicial) {
         this.tamanho = tamanho;
         this.posPlayer = posPlayerInicial;
-        this.posNPC = posNPCInicial;
+        this.posNPC = posNPCInicial -1;
     }
 
-    public Game(){
+    public Game(Player player, NPC npc){
         this.tamanho = 10;
         this.posPlayer = 0;
         this.posNPC = tamanho -1;
+        this.player = player;
+        this.npc = npc;
     }
 
     // Retorna uma string visual simples do ambiente com player e npc
@@ -35,7 +39,7 @@ public class Game {
         return sb.toString(); //Saida esperada: [P][ ][ ][ ][ ][ ][ ][ ][ ][N]
     }
 
-    public int getDistancia() {
+    public int getDistancia(){
         return Math.abs(posNPC - posPlayer);
     }
 
@@ -55,7 +59,7 @@ public class Game {
         }
     }
 
-    public void moverNPCFrente() {
+    public void moverNPCTras() {
         if (posNPC < tamanho - 1 && posNPC + 1 != posPlayer) {
             posNPC++;
         } else if (posNPC + 1 == posPlayer && posNPC + 2 < tamanho) {
@@ -63,7 +67,7 @@ public class Game {
         }
     }
 
-    public void moverNPCTras() {
+    public void moverNPCFrente() {
         if (posNPC > 0 && posNPC - 1 != posPlayer) {
             posNPC--;
         } else if (posNPC - 1 == posPlayer && posNPC - 2 >= 0) {
@@ -78,5 +82,20 @@ public class Game {
     public int getPosNPC() {
         return posNPC;
     }
+
+    // public static void main(String[] args) {
+
+    // Game teste = new Game(10, 0, 10);
+
+    // System.out.println(teste.mostrarCampo());
+    
+    // teste.moverPlayerFrente();
+    // teste.moverNPCFrente();
+
+
+    // System.out.println(teste.mostrarCampo());
+
+        
+    // }
 }
 

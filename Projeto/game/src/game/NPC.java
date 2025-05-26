@@ -1,16 +1,19 @@
 package game;
-
 import game.classes.Classes;
 import game.classes.LongDistance;
 import game.classes.Melee;
 import game.classes.Tank;
 
-public class Player {
+public class NPC {
+
 
     private String nome;
     private Classes personagem; // Pode ser Melee, Tank ou LongDistance
 
-    public Player(String nome, String tipoClasse) {
+
+    public NPC(){}
+    
+    public NPC(String nome, String tipoClasse) {
         this.nome = nome;
 
         switch (tipoClasse.toLowerCase()) {
@@ -44,17 +47,6 @@ public class Player {
         return personagem.getVida();
     }
 
-    public void dano(){
-        personagem.dano();
-
-    }
-
-    public void vida(){
-        int VIDA = getVida();
-
-        System.out.println(getVida() + "/" + VIDA);
-    }
-
     public boolean estaVivo() {
         return personagem.estaVivo();
     }
@@ -67,25 +59,5 @@ public class Player {
     public String getNomeArma() {
         return personagem.getNomeArma();
     }
-
-    public static void main(String[] args) {
-        
-        Player player = new Player("nath", "melee"); 
-        int cont = 10;
-        while (true) {
-
-            player.vida();
-
-            player.dano();
-
-            cont--;
-
-
-
-            if (cont <= 0){
-                break;
-            }
-            
-        }
-    }
 }
+

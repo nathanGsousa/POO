@@ -36,7 +36,7 @@ public class TelaInicial {
             opcao = scanner.nextInt();
 
             switch (opcao) {
-                case 1 -> TelaSelecao.selecionar();
+                case 1 -> TelaGame.game();
                 case 2 -> mostrarInformacoes();
                 case 3 -> System.out.println("Saindo do jogo...");
                 default -> {
@@ -46,12 +46,6 @@ public class TelaInicial {
             }
 
         } while (opcao != 3);
-    }
-
-    private static void iniciar() {
-        System.out.println(">> Iniciando o jogo...");
-        // Chame aqui a função que inicia o jogo de fato
-        Utilidades.pause();
     }
 
     private static void mostrarInformacoes() {
