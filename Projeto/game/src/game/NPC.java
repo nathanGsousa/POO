@@ -11,7 +11,10 @@ public class NPC {
     private Classes personagem; // Pode ser Melee, Tank ou LongDistance
 
 
-    public NPC(){}
+    public NPC(){
+        this.nome = "Guerreiro";
+        this.personagem = new Melee(nome);
+    }
     
     public NPC(String nome, String tipoClasse) {
         this.nome = nome;

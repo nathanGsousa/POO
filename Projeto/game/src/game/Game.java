@@ -83,19 +83,13 @@ public class Game {
         return posNPC;
     }
 
-    // public static void main(String[] args) {
+    public Player getPlayer(){
+        return player;
+    }
 
-    // Game teste = new Game(10, 0, 10);
+    public NPC getNPC(){
+        return npc;
+    }
 
-    // System.out.println(teste.mostrarCampo());
-    
-    // teste.moverPlayerFrente();
-    // teste.moverNPCFrente();
-
-
-    // System.out.println(teste.mostrarCampo());
-
-        
-    // }
 }
 

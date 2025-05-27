@@ -67,8 +67,8 @@ public abstract class Classes implements Combate{
     }
 
     public void dano(){
-        this.vida --;
-
+        this.vida -= getDano();
+        if (this.vida < 0) this.vida = 0;
     }
 
     @Override

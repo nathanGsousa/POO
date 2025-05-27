@@ -79,26 +79,26 @@ public class Player {
         return personagem.getNomeArma();
     }
 
-    public static void main(String[] args) {
+    // public static void main(String[] args) {
         
-        Player player = new Player("nath", "melee"); 
-        int cont = 10;
-        System.out.println(player.personagem.getClasseCombate());
-        while (true) {
+    //     Player player = new Player("nath", "melee"); 
+    //     int cont = 10;
+    //     System.out.println(player.personagem.getClasseCombate());
+    //     while (true) {
 
-            player.vida();
+    //         player.vida();
 
-            player.dano();
+    //         player.dano();
             
 
-            cont--;
+    //         cont--;
 
 
 
-            if (cont <= 0){
-                break;
-            }
+    //         if (cont <= 0){
+    //             break;
+    //         }
             
-        }
-    }
+    //     }
+    // }
 }

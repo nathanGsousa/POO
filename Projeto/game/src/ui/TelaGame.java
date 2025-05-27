@@ -46,12 +46,13 @@ Escolha sua classe:
         System.out.println("\nBem-vindo, " + player.getNome() + " o " + player.getClasseCombate() + "!");
         System.out.println("Pressione Enter para Jogar...");
         scanner.nextLine(); // consome sobra do nextInt
-        scanner.nextLine();
+        scanner.nextLine(); //Espera o Enter
+        jogar(player);
     
     }
 
 
-
+    //Espaço em que o jogo ocorre
     public static void jogar(Player player){
 
         NPC npc = new NPC();
@@ -61,7 +62,7 @@ Escolha sua classe:
 
             System.out.println(game.mostrarCampo());
                 
-            System.out.println(player.getNome() + player.getClasseCombate());
+            System.out.println(player.getNome()+ ' ' + player.getClasseCombate());
             player.vida();
             System.out.println("Arma: " + player.getNomeArma() + '\n' + "Dano: " + player.getDano() + '\n' + "Alcance: " + player.getAlcance());
 
@@ -85,13 +86,14 @@ Ações:
                 case 1 -> game.moverPlayerFrente();
                 case 2 -> game.moverPlayerTras();
                 //case 3 : player.atacar(npc);
+                case 3 -> player.dano(); //Testando as ações do jogador
                 default -> System.out.println("teste");
             };
 
             
 
 
-            if (!player.estaVivo() && !npc.estaVivo()){
+            if (!player.estaVivo() || !npc.estaVivo()){
                      break;
             }
         }
