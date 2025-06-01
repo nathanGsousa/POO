@@ -1,5 +1,4 @@
 package game.combate;
-
 public interface Combate {
 
     // Retorna o nome da arma equipada
@@ -12,7 +11,7 @@ public interface Combate {
     int getAlcance();
 
     // Atacar o inimigo (se estiver no alcance, causa dano)
-    void atacar(Combate inimigo, int distancia);
+    void atacar(Atacavel inimigo, int distancia);
 
     // Sofrer dano recebido em um ataque
     void sofrerDano(int dano);

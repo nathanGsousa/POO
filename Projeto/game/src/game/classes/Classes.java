@@ -2,6 +2,8 @@ package game.classes;
 
 import java.util.Map;
 
+import game.NPC;
+import game.combate.Atacavel;
 import game.combate.Combate;
 
 public abstract class Classes implements Combate{
@@ -65,7 +67,7 @@ public abstract class Classes implements Combate{
     public boolean estaVivo() {
         return vida > 0;
     }
-
+    //Teste de funcionamento:
     public void dano(){
         this.vida -= getDano();
         if (this.vida < 0) this.vida = 0;
@@ -78,19 +80,33 @@ public abstract class Classes implements Combate{
     }
 
     @Override
-    public void atacar(Combate inimigo, int distancia) {
+    public void atacar(Atacavel inimigo, int distancia) {
         // Só ataca se estiver vivo e inimigo vivo
         if (this.estaVivo() && inimigo.estaVivo()) {
             if (distancia <= this.alcance) {
                 inimigo.sofrerDano(this.dano);
-                System.out.println(this.classe + " atacou " + inimigo.getClasse() + " causando " + dano + " de dano!"); //Mudar para this.getNomePlayer -> Classe Player && Mudar inimigo.getClasse() -> getNPCNome()
+                System.out.println(this.nome + " atacou " + inimigo.getNome() + " causando " + dano + " de dano!"); 
 
 
 
             } else {
-                System.out.println(this.classe + " tentou atacar, mas está fora de alcance."); //Mudar para this.getNomePlayer -> Classe Player
+                System.out.println(this.nome + " tentou atacar, mas está fora de alcance."); 
             }
         }
     }
     
+    public String mensagem(){
+        return          "                                             _______________________\n" + //
+                        "   _______________________-------------------                       `\\\n" + //
+                        " /:--__                                                              |\n" + //
+                        "||< > |                                   ___________________________/\n" + //
+                        "| \\__/_________________-------------------                         |\n" + //
+                        "|                                                                  |\n" + //
+                        " |                                                                 |\n" + //
+                        "  |                                              ____________________|_\n" + //
+                        "  |  ___________________-------------------------                      `\\\n" + //
+                        "  |/`--_                                                                 |\n" + //
+                        "  ||[ ]||                                            ___________________/\n" + //
+                        "   \\===/___________________--------------------------";
+    }
 }

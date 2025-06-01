@@ -9,11 +9,16 @@ public class Game {
     private int posNPC;
     private Player player;
     private NPC npc;
+    private Boolean turno; //Lógica simples para turno Player = true / NPC = false
 
     public Game(int tamanho, int posPlayerInicial, int posNPCInicial) {
         this.tamanho = tamanho;
         this.posPlayer = posPlayerInicial;
         this.posNPC = posNPCInicial -1;
+        this.turno = true;
+
+        this.player.setGame(this);
+        this.npc.setGame(this);
     }
 
     public Game(Player player, NPC npc){
@@ -22,6 +27,26 @@ public class Game {
         this.posNPC = tamanho -1;
         this.player = player;
         this.npc = npc;
+        this.turno = true;
+
+        this.player.setGame(this);
+        this.npc.setGame(this);
+    }
+
+    public int getPosPlayer() {
+        return posPlayer;
+    }
+
+    public int getPosNPC() {
+        return posNPC;
+    }
+
+    public Player getPlayer(){
+        return player;
+    }
+
+    public NPC getNPC(){
+        return npc;
     }
 
     // Retorna uma string visual simples do ambiente com player e npc
@@ -43,53 +68,77 @@ public class Game {
         return Math.abs(posNPC - posPlayer);
     }
 
+    public boolean getTurnoPlayer(){
+        return turno;
+    }
+
+    public void trocaTurno(){
+        this.turno = !this.turno;
+    }
+
     public void moverPlayerFrente() {
-        if (posPlayer < tamanho - 1 && posPlayer + 1 != posNPC) {
-            posPlayer++;
-        } else if (posPlayer + 1 == posNPC && posPlayer + 2 < tamanho) {
-            posPlayer += 2; // Pula o NPC
+        if (getTurnoPlayer()){
+
+            if (posPlayer < tamanho - 1 && posPlayer + 1 != posNPC) {
+                posPlayer++;
+                
+            } else if (posPlayer + 1 == posNPC && posPlayer + 2 < tamanho) {
+                posPlayer += 2; // Pula o NPC
+            }
+
+            trocaTurno();
         }
     }
 
     public void moverPlayerTras() {
-        if (posPlayer > 0 && posPlayer - 1 != posNPC) {
-            posPlayer--;
-        } else if (posPlayer - 1 == posNPC && posPlayer - 2 >= 0) {
-            posPlayer -= 2; // Pula o NPC
+        if (getTurnoPlayer()){
+
+            if (posPlayer > 0 && posPlayer - 1 != posNPC) {
+                posPlayer--;
+            } else if (posPlayer - 1 == posNPC && posPlayer - 2 >= 0) {
+                posPlayer -= 2; // Pula o NPC
+            }
+
+            trocaTurno();
         }
     }
 
     public void moverNPCTras() {
-        if (posNPC < tamanho - 1 && posNPC + 1 != posPlayer) {
-            posNPC++;
-        } else if (posNPC + 1 == posPlayer && posNPC + 2 < tamanho) {
-            posNPC += 2; // Pula o player
+        if (!getTurnoPlayer()){
+
+            if (posNPC < tamanho - 1 && posNPC + 1 != posPlayer) {
+                posNPC++;
+            } else if (posNPC + 1 == posPlayer && posNPC + 2 < tamanho) {
+                posNPC += 2; // Pula o player
+            }
+
+            trocaTurno();
         }
     }
 
     public void moverNPCFrente() {
-        if (posNPC > 0 && posNPC - 1 != posPlayer) {
-            posNPC--;
-        } else if (posNPC - 1 == posPlayer && posNPC - 2 >= 0) {
-            posNPC -= 2; // Pula o player
+        if(!getTurnoPlayer()){
+
+            if (posNPC > 0 && posNPC - 1 != posPlayer) {
+                posNPC--;
+            } else if (posNPC - 1 == posPlayer && posNPC - 2 >= 0) {
+                posNPC -= 2; // Pula o player
+            }
+            trocaTurno();
+        }    
+    }
+
+    public void ataquePlayer(){
+        if (getTurnoPlayer()){
+            player.atacar(npc);
+            trocaTurno();
         }
     }
 
-    public int getPosPlayer() {
-        return posPlayer;
+    public void ataqueNPC(){
+        if(!getTurnoPlayer()){
+            npc.atacar(player);
+            trocaTurno();
+        }    
     }
-
-    public int getPosNPC() {
-        return posNPC;
-    }
-
-    public Player getPlayer(){
-        return player;
-    }
-
-    public NPC getNPC(){
-        return npc;
-    }
-
 }
-

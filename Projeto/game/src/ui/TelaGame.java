@@ -5,6 +5,7 @@ import java.util.Scanner;
 import game.Game;
 import game.NPC;
 import game.Player;
+import uteis.Utilidades;
 
 public class TelaGame {
 
@@ -24,16 +25,16 @@ Escolha sua classe:
 [3] Longa Distancia
 """);
 
-        int classe = 0;
+        int classe = -1;
         while (classe < 1 || classe > 3) {
             System.out.print("> Classe (1-3): ");
             if (scanner.hasNextInt()) {
                 classe = scanner.nextInt();
-            } else {
+            }else {
                 scanner.next(); // limpa entrada inválida
             }
         }
-
+        
         String classeNome = switch (classe) {
             case 1 -> "melee";
             case 2 -> "tank";
@@ -57,6 +58,7 @@ Escolha sua classe:
 
         NPC npc = new NPC();
         Game game = new Game(player, npc);
+        System.out.println(player.getMensagem());
 
         while(true){
 
@@ -65,6 +67,8 @@ Escolha sua classe:
             System.out.println(player.getNome()+ ' ' + player.getClasseCombate());
             player.vida();
             System.out.println("Arma: " + player.getNomeArma() + '\n' + "Dano: " + player.getDano() + '\n' + "Alcance: " + player.getAlcance());
+            System.out.print("Vida inimigo: ");
+            npc.vida();
 
             System.out.println("""
 Ações:
@@ -85,22 +89,26 @@ Ações:
             switch (acao) {
                 case 1 -> game.moverPlayerFrente();
                 case 2 -> game.moverPlayerTras();
-                //case 3 : player.atacar(npc);
-                case 3 -> player.dano(); //Testando as ações do jogador
+                case 3 -> game.ataquePlayer(); //Testando as ações do jogador
                 default -> System.out.println("teste");
             };
+
+            if(!game.getTurnoPlayer()){
+                npc.jogarTurno(player);
+            }
 
             
 
 
             if (!player.estaVivo() || !npc.estaVivo()){
-                     break;
+                Utilidades.limparTela();     
+                break;
             }
         }
     }
 
     public static void main(String[] args) {
-        Player player = new Player("nome", "tank");
+        Player player = new Player("nathan", "melee");
 
         TelaGame.jogar(player);
     }

@@ -4,12 +4,14 @@ import game.classes.Classes;
 import game.classes.LongDistance;
 import game.classes.Melee;
 import game.classes.Tank;
+import game.combate.Atacavel;
 
-public class Player {
+public class Player implements Atacavel{
 
     private String nome;
     private Classes personagem; // Pode ser Melee, Tank ou LongDistance
     private final int VIDA;
+    private Game game;
 
     public Player(String nome, String tipoClasse) {
         this.nome = nome;
@@ -28,6 +30,10 @@ public class Player {
                 throw new IllegalArgumentException("Classe inválida: " + tipoClasse);
         }
         this.VIDA = personagem.getVida();
+    }
+
+    public void setGame(Game game){
+        this.game = game;
     }
 
     public String getNome() {
@@ -58,7 +64,13 @@ public class Player {
         personagem.dano();
     }
 
+    public String getMensagem(){
+        return personagem.mensagem();
+    }
 
+    public void sofrerDano(int dano){
+        personagem.sofrerDano(dano);
+    }
 
     public void vida(){
         
@@ -70,35 +82,17 @@ public class Player {
         return personagem.estaVivo();
     }
 
-    // public void atacar(NPC inimigo) {
-    //     int distancia = Game.getDistancia(); 
-    //     personagem.atacar(inimigo.personagem, distancia);
-    // }
+    public void atacar(NPC inimigo) {
+        int distancia = game.getDistancia(); 
+        personagem.atacar(inimigo, distancia);
+    }
 
     public String getNomeArma() {
         return personagem.getNomeArma();
     }
 
-    // public static void main(String[] args) {
-        
-    //     Player player = new Player("nath", "melee"); 
-    //     int cont = 10;
-    //     System.out.println(player.personagem.getClasseCombate());
-    //     while (true) {
+    public String mensagemMorte(){
+        return "Você morreu";
+    }
 
-    //         player.vida();
-
-    //         player.dano();
-            
-
-    //         cont--;
-
-
-
-    //         if (cont <= 0){
-    //             break;
-    //         }
-            
-    //     }
-    // }
 }
