@@ -7,6 +7,8 @@ import game.classes.Melee;
 import game.classes.Tank;
 import game.combate.Atacavel;
 
+
+//TODO: Organizar melhor a lógica do NPC
 public class NPC implements Atacavel{
 
 
