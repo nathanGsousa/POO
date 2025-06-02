@@ -17,9 +17,6 @@ public class Utilidades {
 
     public static void pause() {
         pause("Pressione Enter para continuar...");
-        try {
-            System.in.read();
-        } catch (Exception ignored) {}
     }
 
     public static boolean confirmarRetornoAoMenu() {

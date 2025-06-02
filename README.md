@@ -3,7 +3,7 @@
 ## **Projeto da disciplina de Programação Orientada a Objetos em JAVA**
 
 **Alunos:** Nathan Pereira Gomes de Sousa, 
-**Tema:**  Game
+**Tema:**  Game em turnos
 
 [GitHub](https://github.com/nathanGsousa/POO)
 

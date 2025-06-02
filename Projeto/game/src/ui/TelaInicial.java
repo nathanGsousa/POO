@@ -6,6 +6,10 @@ import uteis.Utilidades;
 
 public class TelaInicial {
 
+public static void game(){
+    TelaInicial.exibirMenu();
+}
+
     private static final Scanner scanner = new Scanner(System.in);
 
       public static void exibirMenu() {
@@ -14,18 +18,22 @@ public class TelaInicial {
         do {
             Utilidades.limparTela();
             System.out.println("""
-
-            
- ██████╗  █████╗ ███╗   ███╗███████╗
-██╔════╝ ██╔══██╗████╗ ████║██╔════╝
-██║  ███╗███████║██╔████╔██║█████╗  
-██║   ██║██╔══██║██║╚██╔╝██║██╔══╝  
-╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗
- ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝
-
- [1] Iniciar
- [2] Informações
- [3] Sair
+╔════════════════════════════════════════════════════════════════════╗
+║                                                                    ║
+║     '     ':.            +   _|_            ~~+         |          ║
+║             '::._             |                       --o--        ║
+║               '._)                                      |          ║
+║:.          ██████╗  █████╗ ███╗   ███╗███████╗                     ║
+║ ::._      ██╔════╝ ██╔══██╗████╗ ████║██╔════╝                     ║
+║  :._)     ██║  ███╗███████║██╔████╔██║█████╗       +~~             ║
+║           ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝                       ║
+║           ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗       `             ║
+║            ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     .               ║
+║                                                                    ║
+║ [1] Iniciar                                                        ║
+║ [2] Informações                                                    ║
+║ [3] Sair                                                           ║
+╚════════════════════════════════════════════════════════════════════╝
 """);
 
             System.out.print("> Escolha uma opção: ");
@@ -36,7 +44,7 @@ public class TelaInicial {
             opcao = scanner.nextInt();
 
             switch (opcao) {
-                case 1 -> TelaSelecao.selecionar();
+                case 1 -> TelaGame.game();
                 case 2 -> mostrarInformacoes();
                 case 3 -> System.out.println("Saindo do jogo...");
                 default -> {
@@ -46,12 +54,6 @@ public class TelaInicial {
             }
 
         } while (opcao != 3);
-    }
-
-    private static void iniciar() {
-        System.out.println(">> Iniciando o jogo...");
-        // Chame aqui a função que inicia o jogo de fato
-        Utilidades.pause();
     }
 
     private static void mostrarInformacoes() {
