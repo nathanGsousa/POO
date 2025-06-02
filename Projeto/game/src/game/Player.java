@@ -95,4 +95,8 @@ public class Player implements Atacavel{
         return "Você morreu";
     }
 
+    public void pocao(){
+        personagem.pocao(5);
+    }
+    
 }

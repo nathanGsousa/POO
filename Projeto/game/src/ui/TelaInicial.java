@@ -7,12 +7,12 @@ import uteis.Utilidades;
 public class TelaInicial {
 
 public static void game(){
-    TelaInicial.exibirMenu();
+    TelaInicial.exibirInicio();
 }
 
     private static final Scanner scanner = new Scanner(System.in);
 
-      public static void exibirMenu() {
+      public static void exibirInicio() {
         int opcao;
 
         do {
@@ -52,6 +52,8 @@ public static void game(){
                     Utilidades.pause();
                 }
             }
+
+            scanner.next();
 
         } while (opcao != 3);
     }

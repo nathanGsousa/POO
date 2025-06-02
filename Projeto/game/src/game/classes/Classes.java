@@ -93,6 +93,12 @@ public abstract class Classes implements Combate{
             }
         }
     }
+
+    public void pocao(int valor){  //Poção generica
+        this.vida += valor;
+    }
+
+
     
     public String mensagem(){
         return          "                                             _______________________\n" + //

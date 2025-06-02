@@ -5,13 +5,17 @@ import java.util.Scanner;
 import game.Game;
 import game.NPC;
 import game.Player;
-import uteis.Utilidades;
 
 public class TelaGame {
 
     public static final Scanner scanner = new Scanner(System.in);
 
     public static void game() {
+
+        System.out.println("Pressione Enter para Jogar...");
+        scanner.nextLine(); // consome sobra do nextInt
+        scanner.nextLine(); //Espera o Enter
+        
         
         System.out.println("============ Cadastro de Jogador ============");
 
@@ -75,10 +79,11 @@ Ações:
 [1] Mover para Frente
 [2] Mover para Trás
 [3] Ataque
+[4] poção de Vida
                 """);
             int acao = 0;
-                while (acao < 1 || acao > 3) {
-                System.out.print("> Ações (1-3): ");
+                while (acao < 1 || acao > 4) {
+                System.out.print("> Ações (1-4): ");
                 if (scanner.hasNextInt()) {
                     acao = scanner.nextInt();
                 } else {
@@ -90,6 +95,7 @@ Ações:
                 case 1 -> game.moverPlayerFrente();
                 case 2 -> game.moverPlayerTras();
                 case 3 -> game.ataquePlayer(); //Testando as ações do jogador
+                case 4 -> game.pocao(); //trazer a poção de vida 
                 default -> System.out.println("teste");
             };
 

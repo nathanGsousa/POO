@@ -128,17 +128,24 @@ public class Game {
         }    
     }
 
-    public void ataquePlayer(){
+    public void ataquePlayer(){  //Função em que o player ataca   
         if (getTurnoPlayer()){
             player.atacar(npc);
             trocaTurno();
         }
     }
 
-    public void ataqueNPC(){
+    public void ataqueNPC(){  //Função em que o NPC ataca
         if(!getTurnoPlayer()){
             npc.atacar(player);
             trocaTurno();
         }    
+    }
+
+    public void pocao(){
+        if (getTurnoPlayer()) {
+            player.pocao();
+            trocaTurno();
+        }
     }
 }
