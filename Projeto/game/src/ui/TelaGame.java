@@ -100,8 +100,13 @@ Ações:
             
 
 
-            if (!player.estaVivo() || !npc.estaVivo()){
-                Utilidades.limparTela();     
+            if (!player.estaVivo()){
+                TelaFinal.telaDerrota();     
+                break;
+            }
+
+            if (!npc.estaVivo()){
+                TelaFinal.telaVitoria();
                 break;
             }
         }

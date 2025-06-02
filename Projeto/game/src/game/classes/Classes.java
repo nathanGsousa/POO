@@ -2,7 +2,6 @@ package game.classes;
 
 import java.util.Map;
 
-import game.NPC;
 import game.combate.Atacavel;
 import game.combate.Combate;
 
