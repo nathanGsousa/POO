@@ -91,10 +91,17 @@ O que envolve:
     void atacar(Atacavel inimigo, int distancia);
 
  - Atacavel -> Um método de classes: Garante que o Player e NPC podem se atacar
- 
+   //Garante que todo Atacavel sofre dano
+    void sofrerDano(int dano);
+
+    //Garante um método para saber se está vivo
+    boolean estaVivo();
+
+    //Get para saber o nome do atacavel
+    String getNome();
 
 > Coleções: 
- - HashMap -> Armas possui o hashmap para identifacar a arma como chave e um lista com seus atributos [0]: Dano [1]: Alcance
+ - Map -> Armas possui o Map<String> para identifacar a arma como chave e um Map<List> de lista para identificar o seus atributos [0]: Dano [1]: Alcance
 
 > API: 
  - Biblioteca padrão do Java **Random**
