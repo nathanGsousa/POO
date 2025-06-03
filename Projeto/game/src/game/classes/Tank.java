@@ -24,18 +24,20 @@ public class Tank extends Classes{
 
     @Override
     public String mensagem() {
+        String linhaNome = String.format("|    Ao %-59s|\n", this.nome);
+
         return  "                                             _______________________\n" +
                 "   _______________________-------------------                       `\\\n" +
                 " /:--__                                                              |\n" +
                 "||< > |                                   ___________________________/\n" +
-                "| \\__/_________________-------------------                         |\n" +
-                "|                         CONVOCAÇÃO                                |\n" +
+                "| \\__/_________________-------------------                        |\n" +
+                "|                         CONVOCAÇÃO                               |\n" +
+                "|                                                                  |\n" +
+                linhaNome +
                 "|                                                                   |\n" +
-                "|    Ao " + this.nome + "                                                          |\n" +
-                "|                                                                    |\n" +
-                " |                   Como o mais forte soldado desse                 |\n" +
-                "  |                    reino você está sendo convocado               |_\n" +
-                "  |                     a lutar por Vossa Graça e morrer             |\n" +
+                " |                   Como o mais forte soldado desse                |\n" +
+                "  |                    reino você está sendo convocado              |_\n" +
+                "  |                     a lutar por Vossa Graça e morrer            |\n" +
                 "  |                       com grande honra!                          |\n" +
                 "  |                                                                  |\n" +
                 "  |    Lute com coragem ou sua história será para sempre esquecida!  |\n" +
@@ -45,5 +47,4 @@ public class Tank extends Classes{
                 "  ||[ ]||                                            ___________________/\n" +
                 "   \\===/___________________--------------------------\n";
     }
-
 }

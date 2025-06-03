@@ -45,7 +45,10 @@ public class TelaFinal {
 
             switch (opcao) {
                 case 1 -> TelaGame.game();
-                case 2 -> System.out.println("Voltando a tela inical jogo...");
+                case 2 -> {
+                    System.out.println("Voltando a tela inical jogo...");
+                    ui.TelaInicial.exibirInicio();
+                }
                 default -> {
                     System.out.println("Opção inválida. Tente novamente.");
                     Utilidades.pause();
@@ -88,8 +91,11 @@ public class TelaFinal {
             opcao = scanner.nextInt();
 
             switch (opcao) {
-                case 1 -> TelaGame.game();
-                case 2 -> System.out.println("Voltando a tela inical jogo...");
+                case 1 -> System.out.println("Lendo Carta.....");
+                case 2 -> {
+                    System.out.println("Voltando a tela inical jogo...");
+                    ui.TelaInicial.exibirInicio();
+                }
                 default -> {
                     System.out.println("Opção inválida. Tente novamente.");
                     Utilidades.pause();
