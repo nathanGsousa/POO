@@ -17,6 +17,10 @@ public class TelaGame {
         scanner.nextLine(); //Espera o Enter
         
         
+        System.out.println("Pressione Enter para Jogar...");
+        scanner.nextLine(); // consome sobra do nextInt
+        scanner.nextLine(); //Espera o Enter
+
         System.out.println("============ Cadastro de Jogador ============");
 
         System.out.print("Digite seu nome: ");
