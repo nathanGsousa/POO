@@ -29,12 +29,12 @@ Entrega:
 **Executar o programa mostrando as funcionalidades principais.**
 **Justificar uso de herança, interface, coleções etc.**
 
-##Entrega:
+## Entrega:
 
 >[Slide](https://www.canva.com/design/DAGoL_fOIyM/roiXc8-EOp103r5M-iVtbQ/edit?utm_content=DAGoL_fOIyM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) <Mudar link>
 **Nosso projeto:**
 
-##Especificações:
+## Especificações:
 
 Jogo de turno simples
 **Descrição:** Um jogo com o objetivo de uma bela ilustração e muita diversão para o jogador(a), Com uma facil jogabilidades, facil entendimento, e claro Muitas lutas, seja Bem vindo ao GAME.
