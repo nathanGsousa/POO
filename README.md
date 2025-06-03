@@ -2,7 +2,7 @@
 
 ## **Projeto da disciplina de Programação Orientada a Objetos em JAVA**
 
-**Alunos:** Nathan Pereira Gomes de Sousa, 
+**Alunos:** Nathan Pereira Gomes de Sousa, José rayff Crispim dos Santos
 **Tema:**  Game em turnos
 
 [GitHub](https://github.com/nathanGsousa/POO)
@@ -47,11 +47,54 @@ Sistema de Gerenciamento Escolar
 
 **Exemplo do nosso projeto:**
 Jogo de turno simples
-Descrição:
+Descrição: Um jogo com o objetivo de uma bela ilustração e muita diversão para o jogador(a), Com uma facil jogabilidades, facil entendimento, e claro Muitas lutas, seja Bem vindo ao GAME.
+Um jogo de turno, de combate faito totalmente para ser usado pelo terminal...
+
 O que envolve:
 
-> Herança: Pessoa → Aluno e Professor
-> Polimorfismo: 
+> Exemplos de Herança:
+
+ - Classes -> Melee, Longdistance, Tank
+
+> Polimorfismo:
+ - mensagem -> Cada classe tanto como melee, tank e LongDistance 
+ apresentam uma mensagem diferente.  
+ 
+
+> Encapsulamneto:
+ -
+
 > Interface: 
+ - Combate -> Classes:
+    // Retorna o nome da arma equipada
+    String getNomeArma();
+
+    // Retorna o dano da arma equipada
+    int getDano();
+
+    // Retorna o alcance da arma equipada
+    int getAlcance();
+
+    // Sofrer dano recebido em um ataque
+    void sofrerDano(int dano);
+
+    // Retorna se o personagem ainda está vivo
+    boolean estaVivo();
+
+    // Retorna o nome do personagem (ex: "Guerreiro", "Mago")
+    String getClasse();
+
+    // Retorna a vida atual do personagem
+    int getVida();
+
+    // Atacar o inimigo (se estiver no alcance, causa dano)
+    void atacar(Atacavel inimigo, int distancia);
+
+ - Atacavel -> Um método de classes: Garante que o Player e NPC podem se atacar
+ 
+
 > Coleções: 
+ - HashMap -> Armas possui o hashmap para identifacar a arma como chave e um lista com seus atributos [0]: Dano [1]: Alcance
+
 > API: 
+ - Biblioteca padrão do Java **Random**
