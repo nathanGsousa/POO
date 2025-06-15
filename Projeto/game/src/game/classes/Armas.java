@@ -26,8 +26,8 @@ public class Armas {
         tank.put("martelo", new int[]{9, 1});
 
         Map<String, int[]> longDistance = new HashMap<>();
-        longDistance.put("arco", new int[]{9, 3});
-        longDistance.put("besta", new int[]{6, 4});
+        longDistance.put("arco", new int[]{10, 3});
+        longDistance.put("besta", new int[]{9, 4});
         longDistance.put("grimorio", new int[]{7,4});
 
         DADOS.put("melee", melee);

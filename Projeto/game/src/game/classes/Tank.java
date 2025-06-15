@@ -19,7 +19,6 @@ public class Tank extends Classes{
                 this.classeCombate = "Tank";
                 this.vida = 60;
         }
-
     }
 
     @Override
@@ -46,5 +45,11 @@ public class Tank extends Classes{
                 "  |/`--_                                                                 |\n" +
                 "  ||[ ]||                                            ___________________/\n" +
                 "   \\===/___________________--------------------------\n";
+    }
+
+    @Override
+    public void pocao(int valor) {
+        this.vida -= valor;
+        System.out.println("Você foi envenenado por um líquidio desconhecido");
     }
 }

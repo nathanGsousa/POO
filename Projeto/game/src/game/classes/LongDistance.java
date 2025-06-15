@@ -2,7 +2,6 @@ package game.classes;
 
 public class LongDistance extends Classes{
 
-
     public LongDistance(String nome) {
         super(nome,"longdistance");
 
@@ -24,6 +23,7 @@ public class LongDistance extends Classes{
                 this.classeCombate = "LongDistance";
         }
     }
+
   @Override
     public String mensagem() {
         String linhaNome = String.format("|    Ao %-59s|\n", this.nome);
@@ -48,6 +48,19 @@ public class LongDistance extends Classes{
                 "  |/`--_                                                                 |\n" +
                 "  ||[ ]||                                            ___________________/\n" +
                 "   \\===/___________________--------------------------\n";
+    }
+
+    @Override
+    public void pocao(int valor) {
+
+        if (this.classeCombate == "Mago"){
+            this.vida += valor;
+        }
+        
+        else {
+        this.vida -= valor;
+        System.out.println("Você foi envenenado por um líquidio desconhecido");
+        }
     }
 }
 

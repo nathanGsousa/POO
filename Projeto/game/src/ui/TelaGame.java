@@ -78,7 +78,7 @@ Ações:
 [1] Mover para Frente
 [2] Mover para Trás
 [3] Ataque
-[4] poção de Vida
+[4] Poção
                 """);
             int acao = 0;
                 while (acao < 1 || acao > 4) {
@@ -93,9 +93,9 @@ Ações:
             switch (acao) {
                 case 1 -> game.moverPlayerFrente();
                 case 2 -> game.moverPlayerTras();
-                case 3 -> game.ataquePlayer(); //Testando as ações do jogador
-                case 4 -> game.pocao(); //trazer a poção de vida 
-                default -> System.out.println("teste");
+                case 3 -> game.ataquePlayer(); //Ações de ataque do jogador
+                case 4 -> game.pocao(); //Poção 
+                default -> System.out.println("erro");
             };
 
             if(!game.getTurnoPlayer()){
@@ -111,7 +111,7 @@ Ações:
             }
 
             if (!npc.estaVivo()){
-                TelaFinal.telaVitoria();
+                TelaFinal.telaVitoria(player);
                 break;
             }
         }

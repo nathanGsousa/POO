@@ -58,7 +58,7 @@ public class TelaFinal {
         } while (opcao != 2);
     }
 
-    public static void telaVitoria(){
+    public static void telaVitoria(Player player){
         int opcao;
 
         do {
@@ -113,7 +113,8 @@ public class TelaFinal {
     }
     
     public static void main(String[] args) {
-        ui.TelaFinal.telaDerrota();
+        Player teste = new Player("nathan", "Mago");
+        ui.TelaFinal.telaVitoria(teste);
     }
     
 }

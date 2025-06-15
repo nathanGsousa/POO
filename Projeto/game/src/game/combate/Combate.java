@@ -24,4 +24,9 @@ public interface Combate {
 
     // Retorna a vida atual do personagem
     int getVida();
+
+    //Get para saber o nome do atacavel
+    String getNome();
+
+    
 }

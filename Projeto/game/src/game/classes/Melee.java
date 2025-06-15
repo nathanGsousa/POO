@@ -2,7 +2,6 @@ package game.classes;
 
 public class Melee extends Classes{
 
-
     public Melee(String nome) {
         super(nome,"melee");
 
@@ -22,6 +21,7 @@ public class Melee extends Classes{
         }
 
     }
+    
     @Override
     public String mensagem() {
         String linhaNome = String.format("|    Ao %-59s|\n", this.nome);
@@ -46,6 +46,12 @@ public class Melee extends Classes{
                 "  |/`--_                                                                 |\n" +
                 "  ||[ ]||                                            ___________________/\n" +
                 "   \\===/___________________--------------------------\n";
+    }
+
+    @Override
+    public void pocao(int valor) {
+        this.vida -= valor;
+        System.out.println("Você foi envenenado por um líquidio desconhecido");
     }
 }
 

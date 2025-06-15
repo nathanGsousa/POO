@@ -15,8 +15,6 @@ public abstract class Classes implements Combate{
     protected int alcance;       // Alcance da arma equipada
     protected String classeCombate;
 
-    
-
     //  Construtor recebe nome e vida inicial
     public Classes(String nome, String classe) {
 
@@ -31,6 +29,10 @@ public abstract class Classes implements Combate{
         this.nomeArma = arma.getKey();
         this.dano = arma.getValue()[0];
         this.alcance = arma.getValue()[1];
+    }
+
+    public String getNome(){
+        return nome;
     }
 
     public String getClasseCombate(){
@@ -98,8 +100,6 @@ public abstract class Classes implements Combate{
         this.vida += valor;
     }
 
-
-    
     public String mensagem(){
         return          "                                             _______________________\n" + //
                         "   _______________________-------------------                       `\\\n" + //
