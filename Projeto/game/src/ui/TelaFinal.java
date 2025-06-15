@@ -91,7 +91,9 @@ public class TelaFinal {
             opcao = scanner.nextInt();
 
             switch (opcao) {
-                case 1 -> System.out.println("Lendo Carta.....");
+                case 1 -> {
+                    TelaFinal.carta(player);
+                }
                 case 2 -> {
                     System.out.println("Voltando a tela inical jogo...");
                     ui.TelaInicial.exibirInicio();
@@ -106,15 +108,20 @@ public class TelaFinal {
     }
 
     public static void carta(Player player){
+        System.out.println("DEBUG VIDA =" + player.getVIDA() +" vidina=" + player.getVida());
         int vida = player.getVida();
+        int vida_max = player.getVIDA();
 
-        // if (vida){}
-
+        if (vida < vida_max*0.5){
+            System.out.println(Cenas.mensagemLowVida());
+            System.out.println("Muito ruim");
+        }else {
+            System.out.println("Teste muita vida");
+        }
     }
     
     public static void main(String[] args) {
-        Player teste = new Player("nathan", "Mago");
+        Player teste = new Player("nathan", "LongDistance");
         ui.TelaFinal.telaVitoria(teste);
     }
-    
 }

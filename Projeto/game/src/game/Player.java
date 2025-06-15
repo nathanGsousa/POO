@@ -52,6 +52,10 @@ public class Player implements Atacavel{
         return personagem.getVida();
     }
 
+    public int getVIDA(){
+        return VIDA;
+    }
+
     public int getAlcance(){
         return personagem.getAlcance();
     }

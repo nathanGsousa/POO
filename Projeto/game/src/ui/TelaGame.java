@@ -106,6 +106,10 @@ Ações:
 
 
             if (!player.estaVivo()){
+                System.out.println(Cenas.mensagemMorte());
+                System.out.println("Pressione Enter para Jogar...");
+                scanner.nextLine(); // consome sobra do nextInt
+                scanner.nextLine(); //Espera o Enter
                 TelaFinal.telaDerrota();     
                 break;
             }

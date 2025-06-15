@@ -6,7 +6,7 @@ import game.classes.LongDistance;
 import game.classes.Melee;
 import game.classes.Tank;
 import game.combate.Atacavel;
-import game.combate.Combate;
+
 
 public class NPC implements Atacavel{
 
