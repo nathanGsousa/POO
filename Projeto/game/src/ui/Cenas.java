@@ -3,34 +3,32 @@ package ui;
 public class Cenas {
 
     public static String mensagemLowVida(){
-        return 
+        return "";
     }
 
     public static String mensagemMidVida(){
-        return
+        return "";
     }
 
 
     public static String mensagemPerfectVida(){
-        return
+        return "";
     }
 
-    public static String cenaCasa(){
-        return """
-                 /|||||||||||  
-               / ||||||||o||   /||||o|\               /|||||\ 
-            / |||||o|||||| /||||||||||o|\            /|||||o||\
-          / ||||||||||||| /||o||||||||||||\        /||||||||||o|\
-          /||\      | |   /||||||||o|||||||\____|__|____|  |______ _          /||o\
-         /|o|\      | |    /_______________________________________\         /|o|||\
-        /|||o|\     | |   /_________________________________________\      /|||||o|\
-       /||o|||||\   | |   | ||___|___| ||||||||||||||||||||___|__||| |     /||o||||||\
-          | |       | |   | ||___|___| ||||||||||||||||||||___|__||| |         | |
-    ooooooooooo | | | | | | |||||||||||||||||||||||||||||||||||||||| | oooooooooo| |ooooooo
-ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-""";
+    public static void casa(){
+        System.out.print(
+    "                /|||||||||||  \n" +
+    "               / ||||||||o||   /||||o|\\              /|||||\\\n" +
+    "            / |||||o|||||| /||||||||||o|\\           /|||||o||\\\n" +
+    "          / ||||||||||||| /||o||||||||||||\\       /||||||||||o|\\\n" +
+    "          /||\\     | |   /||||||||o|||||||\\___|__|____|  |______ _          /||o\\\n" +
+    "         /|o|\\     | |    /_______________________________________\\        /|o|||\\\n" +
+    "        /|||o|\\    | |   /_________________________________________\\     /|||||o|\\\n" +
+    "       /||o|||||\\  | |   | ||___|___| ||||||||||||||||||||___|__||| |    /||o||||||\\\n" +
+    "         | |       | |   | ||___|___| ||||||||||||||||||||___|__||| |         | |\n" +
+    "    ooooooooooo | | | | | | |||||||||||||||||||||||||||||||||||||||| | oooooooo| |ooooooo\n" +
+    "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n"
+    );
     }
-
-    
 
 }
