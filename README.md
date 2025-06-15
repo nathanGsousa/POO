@@ -2,7 +2,7 @@
 
 ## **Projeto da disciplina de Programação Orientada a Objetos em JAVA**
 
-**Alunos:** Nathan Pereira Gomes de Sousa, 
+**Alunos:** Nathan Pereira Gomes de Sousa, José Rayff Crispim dos Santos
 **Tema:**  Game em turnos
 
 [GitHub](https://github.com/nathanGsousa/POO)
@@ -21,7 +21,7 @@ Funcionalidades sugeridas:
 
 4. Que trabalhe com responsabilidade e colaboração. -> **Uso de Git e GitHub**
 
-Formato de entrega:
+Entrega:
 1. Apresentação Técnica com Slides
 **Explicação da estrutura do projeto, principais classes etc.**
 
@@ -29,29 +29,68 @@ Formato de entrega:
 **Executar o programa mostrando as funcionalidades principais.**
 **Justificar uso de herança, interface, coleções etc.**
 
->[Slide](https://www.canva.com/design/DAGoL_fOIyM/roiXc8-EOp103r5M-iVtbQ/edit?utm_content=DAGoL_fOIyM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+## Entrega:
 
-**Exemplo:**
-Sistema de Gerenciamento Escolar
- Descrição: Cadastro de alunos, professores, turmas, notas e faltas.
- O que envolve:
-> Herança: Pessoa → Aluno e Professor
+>[Slide](https://www.canva.com/design/DAGoL_fOIyM/roiXc8-EOp103r5M-iVtbQ/edit?utm_content=DAGoL_fOIyM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) <Mudar link>
 
-> Polimorfismo: métodos exibirInformacoes() com comportamentos distintos
 
-> Interface: com método calcularMedia()
+## **Nosso projeto:**
 
-> Coleções: lista de alunos por turma, mapa de notas por disciplina
+### Especificações:
 
-> API: uso de java.time para datas ou API externa para localização
-
-**Exemplo do nosso projeto:**
 Jogo de turno simples
-Descrição:
-O que envolve:
+**Descrição:** Um jogo com o objetivo de uma bela ilustração e muita diversão para o jogador(a), Com uma facil jogabilidades, facil entendimento, e claro Muitas lutas, seja Bem vindo ao GAME.
+Um jogo de turno, de combate faito totalmente para ser usado pelo terminal...
 
-> Herança: Pessoa → Aluno e Professor
-> Polimorfismo: 
-> Interface: 
-> Coleções: 
-> API: 
+> **Herança:**
+ - Classes -> Melee, Longdistance, Tank
+
+> **Polimorfismo:**
+ - mensagem -> Cada classe como Melee, Tank e LongDistance 
+ apresentam um método mensagem() diferente.
+ 
+> **Encapsulamneto:**
+ - **Player** e **NPC** possuim de atributo a classe Classes, que garantem a funcionalidade deles dentro do jogo.
+ - **Game** nessa classe o funcionamento e o jogo é gerenciado, as possíveis movimentações e os turnos do jogo é aqui controlado, possui os atributos Player e NPC, para onde eles se enontram e jogam um contra o outro.
+
+> **Interface:** 
+ - Combate -> Classes:
+    // Retorna o nome da arma equipada
+    String getNomeArma();
+
+    // Retorna o dano da arma equipada
+    int getDano();
+
+    // Retorna o alcance da arma equipada
+    int getAlcance();
+
+    // Sofrer dano recebido em um ataque
+    void sofrerDano(int dano);
+
+    // Retorna se o personagem ainda está vivo
+    boolean estaVivo();
+
+    // Retorna o nome do personagem (ex: "Guerreiro", "Mago")
+    String getClasse();
+
+    // Retorna a vida atual do personagem
+    int getVida();
+
+    // Atacar o inimigo (se estiver no alcance, causa dano)
+    void atacar(Atacavel inimigo, int distancia);
+
+ - Atacavel -> Um método de classes: Garante que o Player e NPC podem se atacar
+   //Garante que todo Atacavel sofre dano
+    void sofrerDano(int dano);
+
+    //Garante um método para saber se está vivo
+    boolean estaVivo();
+
+    //Get para saber o nome do atacavel
+    String getNome();
+
+> **Coleções:** 
+ - Map -> Armas possui o Map **String** para identifacar a arma como chave e um Map **List** de lista para identificar o seus atributos [0]: Dano [1]: Alcance
+
+> **API:** 
+ - Biblioteca padrão do Java **Random** java.util.random, para que a arma usada pelo **Player** e **NPC** seja aleatória
