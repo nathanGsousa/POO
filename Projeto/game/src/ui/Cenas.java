@@ -51,9 +51,22 @@ public class Cenas {
             "  \\===/___________________--------------------------\n";
     }
 
-    public static String mensagemMae(){
-        return " ";
-    }
+    public static String mensagemMae() {
+    return  """
+╔════════════════════════════════════════════════════════════════════════╗
+║                                                                        ║                                                                        
+║ Meu querido, escute a voz que ecoa do além...                          ║
+║ Tenha cuidado com a convocação para a luta.                            ║
+║ Há segredos ocultos nas sombras do reino.                              ║
+║ Nem toda honra leva à glória...                                        ║
+║                                                                        ║
+║ Lute com sabedoria e desconfie daqueles que sorrirem demais.           ║
+║ Meu amor te acompanha... sempre.                                       ║
+║                                                                        ║
+╚════════════════════════════════════════════════════════════════════════╝
+""";
+}
+
 
 
     public static void casa(){

@@ -108,7 +108,6 @@ public class TelaFinal {
     }
 
     public static void carta(Player player){
-        System.out.println("DEBUG VIDA =" + player.getVIDA() +" vidina=" + player.getVida());
         int vida = player.getVida();
         int vida_max = player.getVIDA();
 
