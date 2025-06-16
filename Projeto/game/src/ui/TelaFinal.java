@@ -115,17 +115,12 @@ public class TelaFinal {
             System.out.println(Cenas.mensagemLowVida());
 
         }else {
-            System.out.println("Teste muita vida");
+            System.out.println("Parabéns!");
         }
 
         System.out.println("Pressione ENTER para continuar...");
         scanner.nextLine(); 
         scanner.nextLine(); 
 
-    }
-    
-    public static void main(String[] args) {
-        Player teste = new Player("nathan", "LongDistance");
-        ui.TelaFinal.telaVitoria(teste);
     }
 }
