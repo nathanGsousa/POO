@@ -98,3 +98,7 @@ Um jogo de turno, de combate feito totalmente para ser usado pelo terminal...
 > **API:**
 
 - Biblioteca padrão do Java **Random** java.util.random, para que a arma usada pelo **Player** e **NPC** seja aleatória.
+
+> **Jogar:**
+
+-No package app Run a função main da classe Principal.java
