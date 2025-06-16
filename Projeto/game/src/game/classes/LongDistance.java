@@ -24,31 +24,34 @@ public class LongDistance extends Classes{
         }
     }
 
-  @Override
+    @Override
     public String mensagem() {
-        String linhaNome = String.format("|    Ao %-59s|\n", this.nome);
+    String linhaNome = String.format("|    Ao %-59s|\n", this.nome);
 
-        return  "                                             _______________________\n" +
-                "   _______________________-------------------                       `\\\n" +
-                " /:--__                                                              |\n" +
-                "||< > |                                   ___________________________/\n" +
-                "| \\__/_________________-------------------                        |\n" +
-                "|                         CONVOCAÇÃO                               |\n" +
-                "|                                                                  |\n" +
-                linhaNome +
-                "|                                                                   |\n" +
-                " |                   Como o mais inteligente soldado desse          |\n" +
-                "  |                    reino você está sendo convocado              |_\n" +
-                "  |                     a lutar por Vossa Graça e morrer            |\n" +
-                "  |                       com grande honra!                          |\n" +
-                "  |                                                                  |\n" +
-                "  |    Lute com coragem ou sua história será para sempre esquecida!  |\n" +
-                "  |                                              ____________________|\n" +
-                "  |  ___________________-------------------------                      `\\\n" +
-                "  |/`--_                                                                 |\n" +
-                "  ||[ ]||                                            ___________________/\n" +
-                "   \\===/___________________--------------------------\n";
+    return  "                                             _______________________\n" +
+            "   _______________________-------------------                       `\\\n" +
+            " /:--__                                                              |\n" +
+            "||< > |                                   ___________________________/\n" +
+            "| \\__/_________________-------------------                        |\n" +
+            "|                         CONVOCAÇÃO                               |\n" +
+            "|                                                                  |\n" +
+            linhaNome +
+            "|                                                                  |\n" +
+            "|        Em nome de Vossa Graça, você foi escolhido.               |\n" +
+            "|        Não por honra, não por glória, mas por conveniência.      |\n" +
+            "|        Recusar é desaparecer. Lutar é sua única chance de ser      |\n" +
+            "|        util. Fique feliz sua inteligência foi reconhecida.        |\n" +
+            "|                                                                   |\n" +
+            "|        Que o sangue que derramar seja suficiente para manter      |\n" +
+            "|        sua existência.                                           |\n" +
+            "|                                                                  |\n" +
+            " |                                              ____________________|\n" +
+            " |  ___________________-------------------------                      `\\\n" +
+            " |/`--_                                                                 |\n" +
+            " ||[ ]||                                            ___________________/\n" +
+            "  \\===/___________________--------------------------\n";
     }
+
 
     @Override
     public void pocao(int valor) {

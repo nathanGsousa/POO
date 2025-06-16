@@ -44,12 +44,12 @@ public static void game(){
             opcao = scanner.nextInt();
 
             switch (opcao) {
-                case 1 -> TelaGame.game();
+                case 1 -> TelaGame.iniciar();
                 case 2 -> mostrarInformacoes();
                 case 3 -> System.out.println("Saindo do jogo...");
                 default -> {
                     System.out.println("Opção inválida. Tente novamente.");
-                    Utilidades.pause();
+                    
                 }
             }
 
@@ -64,10 +64,8 @@ public static void game(){
    Criado por Nathan e Rayff para a discplina de POO.
    
    Jogo feito em Java, terminal puro.
-   Use o teclado numérico para jogar.
+
+   Use o teclado numérico para jogar.(1)
 """);
-        Utilidades.pause();
     }
-
-
 }

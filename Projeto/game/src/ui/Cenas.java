@@ -1,8 +1,12 @@
 package ui;
 
-    public class Cenas {
+import java.util.Scanner;
 
-        public static String mensagemMorte() {
+public class Cenas {
+
+    public static final Scanner scanner = new Scanner(System.in);
+
+    public static String mensagemMorte() {
         return  "                                             _______________________\n" +
                 "   _______________________-------------------                       `\\\n" +
                 " /:--__                                                              |\n" +
@@ -12,13 +16,13 @@ package ui;
                 "|        Vacilando e sucubindo aos ferimentos..                     |\n"+
                 "|        Você não apenas perdeu...                                  |\n" +
                 "|        Você foi arrancado da existência.                          |\n" +
-                "|        Seu nome, suas memórias, sua alma — tudo apagado,          |\n" +
+                "|        Seu nome, suas memórias, sua alma, tudo apagado,           |\n" +
                 "|        como se nunca tivesse existido.                            |\n" +
-                "|                                                                  |\n" +
+                "|                                                                   |\n" +
                 "|        Um espectro vazio, condenado a vagar eternamente           |\n" +
                 "|        no limiar entre o esquecimento e a dor.                    |\n" +
-                "|                                                                  |\n" +
-                " |                                              ____________________|\n" +
+                "|                                                                    |\n" +
+                " |                                              _____________________|\n" +
                 " |  ___________________-------------------------                      `\\\n" +
                 " |/`--_                                                                 |\n" +
                 " ||[ ]||                                            ___________________/\n" +
@@ -38,14 +42,18 @@ package ui;
             "|        e a escuridão sussurra seu nome, faminta.                  |\n" +
             "|        Cada passo é um suspiro prestes a se apagar.               |\n" +
             "|                                                                  |\n" +
-            "|        A luta não terminou — ela apenas sussurra para continuar.  |\n" +
+            "|        A luta não terminou, ela apenas sussurra para continuar.  |\n" +
             "|                                                                  |\n" +
             " |                                              ____________________|\n" +
             " |  ___________________-------------------------                      `\\\n" +
             " |/`--_                                                                 |\n" +
             " ||[ ]||                                            ___________________/\n" +
             "  \\===/___________________--------------------------\n";
-}
+    }
+
+    public static String mensagemMae(){
+        return " ";
+    }
 
 
     public static void casa(){
@@ -62,6 +70,9 @@ package ui;
     "    ooooooooooo | | | | | | |||||||||||||||||||||||||||||||||||||||| | oooooooo| |ooooooo\n" +
     "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n"
     );
+        System.out.println();
+        System.out.println("Pressione Enter para Continuar...");
+        scanner.nextLine(); // consome sobra do nextInt
+        scanner.nextLine(); //Espera o Enter
     }
-
 }

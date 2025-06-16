@@ -10,6 +10,15 @@ public class TelaGame {
 
     public static final Scanner scanner = new Scanner(System.in);
 
+    public static void iniciar(){
+
+        System.out.println();
+        Cenas.casa();
+        System.out.println(Cenas.mensagemMae());
+        TelaGame.game();
+
+    }
+
     public static void game() {
 
         System.out.println("Pressione Enter para Jogar...");
@@ -106,7 +115,8 @@ Ações:
 
 
             if (!player.estaVivo()){
-                System.out.println(Cenas.mensagemMorte());
+                
+                System.out.println(TelaFinal.ANSI_RED +Cenas.mensagemMorte() + TelaFinal.ANSI_RESET);
                 System.out.println("Pressione Enter para Jogar...");
                 scanner.nextLine(); // consome sobra do nextInt
                 scanner.nextLine(); //Espera o Enter

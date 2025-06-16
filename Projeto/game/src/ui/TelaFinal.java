@@ -114,10 +114,15 @@ public class TelaFinal {
 
         if (vida < vida_max*0.5){
             System.out.println(Cenas.mensagemLowVida());
-            System.out.println("Muito ruim");
+
         }else {
             System.out.println("Teste muita vida");
         }
+
+        System.out.println("Pressione ENTER para continuar...");
+        scanner.nextLine(); 
+        scanner.nextLine(); 
+
     }
     
     public static void main(String[] args) {
